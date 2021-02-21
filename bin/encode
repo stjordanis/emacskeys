@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -e
+
+srt="
+1
+00:00:00,000 --> 00:00:02,000
+hello
+"
+srt_align=1
+srt_l=10
+srt_v=30
+
+encode()
+{
+    printf '%s' "$srt" > in.srt
+    fmt="format=yuv420p,subtitles=in.srt"
+    fmt="$fmt:force_style='Fontname=Menlo,Fontsize=24"
+    fmt="$fmt,PrimaryColour=&H66ff66&,OutlineColour=&Hff000000&"
+    fmt="$fmt,Alignment=$srt_align,MarginL=$srt_l,MarginV=$srt_v'"
+    set -x
+    ffmpeg -y -i "raw/$slug.mkv" -c:v libx264 -preset veryslow -crf 17 -vf "$fmt" "vid/$slug.mp4"
+    set +x
+    ls -lh "vid/$slug.mp4"
+}
+
+view()
+{
+    if command -v xdg-open > /dev/null
+    then
+        xdg-open "vid/$slug.mp4"
+    elif command -v open > /dev/null
+    then
+        open "vid/$slug.mp4"
+    else
+        echo Cannot find a program to open file
+    fi
+}
+
+main()
+{
+    slug=${1##*/}
+    slug=${slug%%.*}
+    . "$1"
+    encode
+    view
+}
+
+main "$@"

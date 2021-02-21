@@ -1,0 +1,100 @@
+#!/bin/sh
+
+set -e
+
+base_url="https://emacskeys.com"
+
+index="
+C-x-C-f
+C-x-C-s
+C-x-C-c
+"
+
+render_entry()
+{
+    . "var/$slug.sh"
+
+    cat <<eof >> _site/tmp1.xml
+<item>
+  <title>$title</title>
+  <link>$base_url/#$slug</link>
+  <guid>$base_url/#$slug</guid>
+  <description>
+    <![CDATA[
+      <figure>
+        <video controls>
+          <source src="vid/$slug.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          $caption
+        </figcaption>
+      </figure>
+    ]]>
+  </description>
+</item>
+eof
+
+    sed "s|href=\"#|href=\"$base_url/#|g" _site/tmp1.xml \
+        > _site/tmp2.xml
+
+    cat <<eof >> _site/tmp1.html
+<h3 id="$slug">$i.&nbsp;&nbsp;$title<a href="#$slug"></a></h3>$note
+<figure>
+  <video controls>
+    <source src="vid/$slug.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+    $caption
+  </figcaption>
+</figure>
+eof
+
+    cat <<eof >> _site/tmp2.html
+<li><a href="#$slug">$title</a></li>
+eof
+}
+
+
+main()
+{
+    rm -rf _site
+    mkdir -p _site/vid
+
+    echo "Copying static files ..." >&2
+    cp web/favicon.png _site
+    cp web/favicon.ico _site
+    cp web/CNAME _site
+    cp web/*.svg _site
+
+    echo "Copying MP4 files ..." >&2
+    cp vid/*.mp4 _site/vid
+
+    n=$(printf '%s\n' "$index" | grep "[[:graph:]]" | wc -l | sed 's/^ *//g')
+    i=1
+    printf '%s\n' "$index" | grep "[[:graph:]]" | while read -r slug
+    do
+        echo "Rendering $i of $n ($slug) ..." >&2
+        (render_entry)
+        i=$(( $i + 1 ))
+    done
+
+    echo "Rendering home page ..." >&2
+    cat web/begin.html >> _site/index.html
+    cat _site/tmp1.html >> _site/index.html
+    cat web/contents.html >> _site/index.html
+    cat _site/tmp2.html >> _site/index.html
+    cat web/end.html >> _site/index.html
+
+    echo "Rendering RSS feed ..." >&2
+    cat web/begin.xml >> _site/rss.xml
+    cat _site/tmp2.xml >> _site/rss.xml
+    cat web/end.xml >> _site/rss.xml
+
+    echo "Cleaning up ..." >&2
+    rm _site/tmp*
+
+    echo "Done" >&2
+}
+
+
+main "$@"

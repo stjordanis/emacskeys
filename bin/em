@@ -1,0 +1,4 @@
+#!/bin/sh
+rm -rf ~/"#"* ~/*~
+cd ~
+emacs -q -l "$OLDPWD/bin/init.el" "$@" &

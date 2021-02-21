@@ -1,0 +1,196 @@
+<h2 id="subscribe">Subscribe<a href="#subscribe"></a></h2>
+<p>
+Addition of new entries to this page are announced via the following
+channels:
+</p>
+<ul>
+  <li>Feed: <a href="rss.xml">rss.xml</a></li>
+  <li>Twitter: <a href="https://twitter.com/susam">@susam</a></li>
+  <li>Matrix: <a href="https://matrix.to/#/#susam:matrix.org">#susam:matrix.org</a></li>
+  <li>Freenode: <a href="https://webchat.freenode.net/#susam">#susam</a></li>
+  <li>Reddit: <a href="https://reddit.com/r/susam">r/susam</a></li>
+</ul>
+<p>
+You are welcome to follow one or more of these channels to receive
+updates regarding new entries on this page. The Freenode and Matrix
+channels are bridged together, so if you join one of them, you will
+automatically receive the updates from the other one too.
+</p>
+
+<h2 id="about">About<a href="#about"></a></h2>
+<p>
+<a href="#emacs-keys">Emacs Keys</a> was created by <a
+href="https://twitter.com/susam">Susam Pal</a> with the intention of
+providing beginners to Emacs yet another way of learning Emacs. This
+page consists of a sequence of Emacs keys and commands that are
+carefully sequenced so that beginners to Emacs can find the most
+essential keys and commands very early on this page.
+</p>
+<!--
+<p>
+Emacs experts can also find interesting keys and commands on this page.
+Just skip the first 20 entries or so and scroll down to the 21st entry
+and begin reading there. You might find some interesting keys and
+commands there that you either did not know about or that you knew but
+you forget to use them actively.
+</p>
+-->
+<p>
+There is a demo in the form of screencast for each entry on this page.
+The length of each screencast does not exceed 10 seconds, so you can
+pick any entry on this page and you should be able to learn something
+useful about Emacs in less than a minute.
+</p>
+<p>
+This website documents only the keys and commands available in vanilla
+GNU Emacs. Emacs distributions like Spacemacs, Doom Emacs, etc. are not
+covered here.
+</p>
+
+<h2 id="faq">Frequenty Asked Questions (FAQ)<a href="#faq"></a></h2>
+<ol class="faq">
+  <li id="faq-install">
+    <h3>
+      How can I install Emacs?
+      <a href="#faq-install"></a>
+    </h3>
+    <p>
+      Visit <a href="https://www.gnu.org/software/emacs/">GNU Emacs
+      Download &amp; Installation</a> for more details.
+    </p>
+  </li>
+  <li id="faq-init">
+    <h3>
+      How can I make my Emacs look like the one in the screencasts?
+      <a href="#faq-init"></a>
+    </h3>
+    <p>
+      See this <a
+      href="https://github.com/susam/emacskeys/blob/master/bin/init.el">init.el</a>
+      that is used to customize Emacs to get the user interface you see
+      in the screencasts. First copy the content of this file. Then
+      start Emacs and type <code>C-x C-f ~/.emacs.d/init.el RET</code>.
+      Then type <code>C-y</code> to paste. Then type <code>C-x
+      C-s</code> to save. Finally type <code>C-x C-c</code> to quit.
+      Start Emacs again and the user interface should look similar to
+      the ones in the screencasts.
+    </p>
+  </li>
+  <li id="faq-no-audio">
+    <h3>
+      Why can I not hear anything in the screencasts?
+      <a href="#faq-no-audio"></a>
+    </h3>
+    <p>
+      There is no audio in the screencasts. All screencasts are silent
+      videos.
+    </p>
+  </li>
+  <li id="faq-recording">
+    <h3>
+      What tools do you use to make the screencasts?
+      <a href="#faq-recording"></a>
+    </h3>
+    <p>
+      I use FFmpeg, the Swiss Army Knife for audio/video manipulation. I
+      run a recent version of GNU Emacs with a tiny initialization file
+      that makes Emacs look minimal and loads a dark color theme for it.
+      FFmpeg is used to create a video capture of the screen while I
+      demo the Emacs operations. The key sequence overlay that appears
+      in green at the bottom of each video are subtitles added using
+      FFmpeg. See the initialization file
+      <a href="https://github.com/susam/emacskeys/blob/master/bin/init.el">init.el</a>,
+      and the scripts
+      <a href="https://github.com/susam/emacskeys/blob/master/bin/record">record</a>
+      and
+      <a href="https://github.com/susam/emacskeys/blob/master/bin/encode">encode</a>
+      for more details.
+    </p>
+  </li>
+  <li id="faq-subscribe">
+    <h3>
+      How can I receive updates for new entries on this page?
+      <a href="#faq-subscribe"></a>
+    </h3>
+    <p>
+      Go to the <a href="#subscribe">Subscribe</a> section and subscribe
+      to one or more channels mentioned there.
+    </p>
+  </li>
+  <li id="faq-issues">
+    <h3>
+      Where can I report an issue I found on this page?
+      <a href="#faq-issues"></a>
+    </h3>
+    <p>
+      You can report an issue or error you have found on this page at <a
+      href="https://github.com/susam/emacskeys/issues">github.com/susam/emacskeys/issues</a>.
+      Click on the "New issue" button there to create a new issue. This
+      is the preferred way of reporting an issue. If, however, you are
+      not comfortable reporting an issue via GitHub, you can also talk
+      to me via one of the channels mentioned in the <a
+      href="#subscribe">Subscribe</a> section. If you are familiar with
+      Git and GitHub, you are also very welcome to send a pull request
+      to fix issues.
+    </p>
+  </li>
+  <li id="faq-suggestion">
+    <h3>
+      Where can I make a suggestion for adding a new entry to this page?
+      <a href="#faq-suggestion"></a>
+    </h3>
+    <p>
+      See the answer to the previous question. You can use the same
+      channels for suggesting a new entry for an Emacs key or command
+      that is currently missing from this page.
+    </p>
+  </li>
+  <li id="faq-support">
+    <h3>
+      How can I support this page?
+      <a href="#faq-support"></a>
+    </h3>
+    <p>
+      If you have found this page useful, you can support this page in a
+      couple of ways. You can send a donation via <a
+      href="https://www.buymeacoffee.com/susam">BMC</a>. You can also
+      subscribe to one or more of the channels mentioned in the <a
+      href="#subscribe">Subscribe</a> section, receive updates about new
+      entries and share the links to the new entries with others.
+    </p>
+  </li>
+</ol>
+
+<h2 id="license">License<a href="#license"></a></h2>
+<p>
+Copyright &copy; 2021 Susam Pal
+</p>
+<p>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/"><img
+src="by-sa.svg" alt="CC BY-SA 4.0 Logo"></a>
+</p>
+<p>
+This content of this page is licensed under the <a
+href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+Attribution-ShareAlike 4.0 International License</a>.
+</p>
+<p>
+You are free to share the material in any medium or format and/or adapt
+the material for any purpose, even commercially, under the terms of the
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+License.
+</p>
+<p>
+This content of this page is provided <strong>as-is and as-available,
+without representations or warranties of any kind,</strong> whether
+express, implied, statutory, or other. See the <a
+href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA
+4.0 Legal Code</a> for details.
+</p>
+
+<h2 id="contents">Contents<a href="#contents"></a></h2>
+<ul>
+  <li><a href="#emacs-keys">Introduction</a></li>
+  <li>
+    <a href="#keys">Keys</a>
+    <ol>

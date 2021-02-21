@@ -1,0 +1,46 @@
+#!/bin/sh
+
+set -e
+
+delay=3
+duration=10
+crop_x=0
+crop_y=46
+crop_w=1160
+crop_h=668
+
+beeps()
+{
+    t=$duration
+    printf "\a"
+	while [ $t -gt 0 ]
+    do
+        sleep 1
+        printf "\a"
+        t=$(( $t - 1 ))
+    done
+}
+
+record()
+{
+    fmt="crop=$crop_w:$crop_h:$crop_x:$crop_y"
+
+    set -x
+    ffmpeg -y -f avfoundation -i 1 -t "$duration" -vf "$fmt" "raw/$slug.mkv"
+    set +x
+    ls -lh "raw/$slug.mkv"
+}
+
+main()
+{
+    slug=${1##*/}
+    slug=${slug%%.*}
+    . "$1"
+    sleep "$delay"
+    echo "Recording for $duration seconds ..."
+    beeps &
+    record
+    echo "Done $duration seconds"
+}
+
+main "$@"
