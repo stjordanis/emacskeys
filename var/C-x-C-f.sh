@@ -42,6 +42,14 @@ disk. You will see how to save the buffer to the disk in the next
 section.
 </p>
 <p>
+Typing consecutive <code>C-</code> key sequences can be optimized by
+pressing and holding down the <kbd>ctrl</kbd> key, then typing the other
+keys, and then releasing the <kbd>ctrl</kbd> key. For example, to type
+<kbd>C-x C-f</kbd>, first press and hold down <kbd>ctrl</kbd>, then type
+<kbd>x</kbd>, then type <kbd>f</kbd>, and then release <kbd>ctrl</kbd>.
+This shortcut works for other modifier keys too.
+</p>
+<p>
 If you have a fresh new installation of vanilla GNU Emacs, its user
 interface likely looks different from the one in the above screen
 capture video. See <a href=\"#faq-init\">this FAQ entry</a> to learn how
