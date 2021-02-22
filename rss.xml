@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Emacs Keys</title>
+<link>https://emacskeys.com/</link>
+<atom:link href="https://emacskeys.com/rss.xml" rel="self" type="application/rss+xml"/>
+<description>Emacs Keys Feed</description>
+<item>
+  <title>C-x C-f (find-file)</title>
+  <link>https://emacskeys.com/#C-x-C-f</link>
+  <guid>https://emacskeys.com/#C-x-C-f</guid>
+  <description>
+    <![CDATA[
+      <figure>
+        <video controls>
+          <source src="vid/C-x-C-f.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          
+<p>
+You have launched Emacs for the first time. You want to open a new file
+in it. What do you do?
+</p>
+<p>
+Type <code>C-x C-f <em>filename</em> RET</code>.
+</p>
+<p>
+It runs the command <code>find-file</code>. This command creates a new
+file or opens an existing file if it exists in an Emacs buffer. Note
+that in the Emacs world (and elsewhere too), the notation
+<code>C-</code> denotes the <kbd>ctrl</kbd> modifier key. Thus
+<code>C-x</code> denotes <kbd>ctrl</kbd> + <kbd>x</kbd>. Similarly
+<code>RET</code> denotes the <kbd>enter</kbd> key.
+</p>
+<p>
+The last but one row in the window displays the <em>mode line</em>. Note
+how the first two dashes (<samp>--</samp>) in the mode line turn into
+asterisks (<samp>**</samp>) as soon as you type some text into the
+buffer. The two asterisks are telling you that the buffer has been
+modified but the modifications have not been written to the file on the
+disk. You will see how to save the buffer to the disk in the next
+section.
+</p>
+<p>
+Typing consecutive <code>C-</code> key sequences can be optimized by
+pressing and holding down the <kbd>ctrl</kbd> key, then typing the other
+keys, and then releasing the <kbd>ctrl</kbd> key. For example, to type
+<kbd>C-x C-f</kbd>, first press and hold down <kbd>ctrl</kbd>, then type
+<kbd>x</kbd>, then type <kbd>f</kbd>, and then release <kbd>ctrl</kbd>.
+This shortcut works for other modifier keys too.
+</p>
+<p>
+If you have a fresh new installation of vanilla GNU Emacs, its user
+interface likely looks different from the one in the above screen
+capture video. See <a href="https://emacskeys.com/#faq-init">this FAQ entry</a> to learn how
+you can customize the user interface.
+</p>
+
+        </figcaption>
+      </figure>
+    ]]>
+  </description>
+</item>
+<item>
+  <title>C-x C-s (save-buffer)</title>
+  <link>https://emacskeys.com/#C-x-C-s</link>
+  <guid>https://emacskeys.com/#C-x-C-s</guid>
+  <description>
+    <![CDATA[
+      <figure>
+        <video controls>
+          <source src="vid/C-x-C-s.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          
+<p>
+You have a file open in an Emacs buffer and you have made some edits to
+it. You want to save these changes back to the file on the disk. What do
+you do?
+</p>
+<p>
+Type <code>C-x C-s</code>.
+</p>
+<p>
+It runs the command <code>save-buffer</code>. This command saves the
+current buffer to the file if modified. Note how the two asterisks
+(<samp>**</samp>) in the mode line turn into dashes (<samp>--</samp>)
+indicating that the content of the buffer has been saved to the file on
+the disk.
+</p>
+
+        </figcaption>
+      </figure>
+    ]]>
+  </description>
+</item>
+<item>
+  <title>C-x C-c (save-buffers-kill-terminal)</title>
+  <link>https://emacskeys.com/#C-x-C-c</link>
+  <guid>https://emacskeys.com/#C-x-C-c</guid>
+  <description>
+    <![CDATA[
+      <figure>
+        <video controls>
+          <source src="vid/C-x-C-c.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          
+<p>
+You are happy with what you have done so far. You want to close Emacs
+now. What do you do?
+</p>
+<p>
+Type <code>C-x C-c</code>.
+</p>
+<p>
+It runs the command <code>save-buffers-kill-terminal</code>. This
+command first offers to save each modified buffer and then closes the
+Emacs session.
+</p>
+
+        </figcaption>
+      </figure>
+    ]]>
+  </description>
+</item>
+<item>
+  <title>C-g (keyboard-quit)</title>
+  <link>https://emacskeys.com/#C-g</link>
+  <guid>https://emacskeys.com/#C-g</guid>
+  <description>
+    <![CDATA[
+      <figure>
+        <video controls>
+          <source src="vid/C-g.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          
+<p>
+While entering an input to a command interactively, you change your mind
+in the middle and now you want to cancel the command completely. What do
+you do?
+</p>
+<p>
+Type <code>C-g</code>.
+</p>
+<p>
+It runs the command <code>keyboard-quit</code>. This command quits the
+execution of the current command. This command quits other types of
+commands too that do not expect input interactively. For example, if a
+command is taking too long to complete, you can type <code>C-g</code> to
+cancel it. This key works in other contexts too such as when you want to
+cancel a partially entered key sequence. See the <a href=#key-C-g>next
+entry</a> for an example of this.
+</p>
+
+        </figcaption>
+      </figure>
+    ]]>
+  </description>
+</item>
+<item>
+  <title>Key C-g (undefined)</title>
+  <link>https://emacskeys.com/#key-C-g</link>
+  <guid>https://emacskeys.com/#key-C-g</guid>
+  <description>
+    <![CDATA[
+      <figure>
+        <video controls>
+          <source src="vid/key-C-g.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          
+<p>
+While typing a key sequence, you change your mind in the middle and now
+you want to cancel typing the key sequence. What do you do?
+</p>
+<p>
+Type <code>C-g</code>.
+</p>
+<p>
+The last line of the Emacs screen that displays key sequences, errors,
+messages, etc. is called the <em>echo area</em>. When you type
+<code>C-x</code> followed by <code>C-g</code>, the following message
+appears in the echo area: <samp>C-x C-g is undefined</samp>. This is by
+design. Emacs follows the convention of not using <code>C-g</code> in
+any key sequence, so that you can type <code>C-g</code> at any point
+while typing out a key sequence to cancel it. When you learn to create
+your own key sequences later, remember to never use <code>C-g</code> in
+any key sequence, so that it can be used to cancel partially typed key
+sequences.
+</p>
+
+        </figcaption>
+      </figure>
+    ]]>
+  </description>
+</item>
+</channel>
+</rss>
