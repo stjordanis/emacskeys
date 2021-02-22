@@ -8,6 +8,8 @@ index="
 C-x-C-f
 C-x-C-s
 C-x-C-c
+C-g
+key-C-g
 "
 
 render_entry()
